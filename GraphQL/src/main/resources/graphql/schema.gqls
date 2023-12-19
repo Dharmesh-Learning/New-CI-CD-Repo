@@ -1,0 +1,32 @@
+type Query {
+	getUsersQL: [Users]
+	getUserByIdQLTEST(userName:String): Users
+}
+
+type Mutation {
+	getUserByIdQL(userId:Int): Users
+	saveOrUpdate(userId:Int,firstName:String,lastName:String,passwordId:Int,passwords:String,schoolId:Int,schoolName:String,schoolAddress:String,schoolType:String): Users
+}
+
+type Users{
+
+	id: ID!
+	firstName: String
+	lastName: String
+	password: Password
+	schoolInfo: SchoolInfo	
+}
+
+type Password{
+	passwordId: ID!
+	passwords: String
+}
+
+type SchoolInfo {
+
+	schoolInfoId: ID!
+	schoolName: String
+	schoolAddress: String
+	schoolType: String	
+}
+
