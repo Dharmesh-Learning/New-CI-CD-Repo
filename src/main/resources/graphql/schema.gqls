@@ -1,6 +1,6 @@
 type Query {
 	getUsersQL: [Users]
-	getUserByIdQLTEST(userName:String): Users
+	getUserByUserName(userName:String): Users
 }
 
 type Mutation {

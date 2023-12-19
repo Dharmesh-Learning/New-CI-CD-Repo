@@ -18,25 +18,25 @@ public class GraphQLController {
 
 	@SchemaMapping(value = "getUsersQL", typeName = "Query")
 	private List<Users> getUsers() {
-		System.out.println("Fatching All the users Data...");
+		System.out.println("GraphQL :> QueryAPI :> 'getUsersQL' Loading Data...");
 		return userHandler.getAll();
 	}
 	
 	@SchemaMapping(value = "getUserByIdQL", typeName = "Mutation")
 	private Users getUserById(@Argument int userId) {
-		System.out.println("Fatching the users Data by Id..." + userId);		
+		System.out.println("GraphQL :> MutationAPI :> 'getUserByIdQL' Loading Data for userId: " + userId);		
 		return userHandler.getUserByUd(userId);
 	}
 	
 	@SchemaMapping(value = "saveOrUpdate", typeName = "Mutation")
 	private Users createUsers(@Argument int userId,@Argument String firstName, @Argument String lastName,@Argument int passwordId,@Argument String passwords,@Argument int schoolId,@Argument String schoolName,@Argument String schoolAddress, @Argument String schoolType) {
-		System.out.println("Save or updating the user "  + firstName + lastName);
+		System.out.println("GraphQL :> MuationAPI :> 'saveOrUpdate' Updating/Saving Data for "  + firstName +" "+ lastName);
 		return  userHandler.saveOrUpdateSingleEntity(Users.createUserObject(userId, firstName, lastName,passwordId, passwords, schoolId, schoolName, schoolAddress, schoolType));
 	}
 		
-	@SchemaMapping(value = "getUserByIdQLTEST", typeName = "Query")
+	@SchemaMapping(value = "getUserByUserName", typeName = "Query")
 	private Users getUserByIdTEST(@Argument String userName) {
-		System.out.println("-- TEST --- Fatching the users Data by Id..." + userName);
-		return userHandler.getUserBySchoolName(userName);
+		System.out.println("GraphQL :> QueryAPI :> 'getUserByUserName' Loading Data by userName: " + userName);
+		return userHandler.getUserByUserName(userName);
 	}	
 }

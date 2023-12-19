@@ -43,14 +43,6 @@ public class GraphQlApplication implements ApplicationRunner {
 		users.add(new Users(0, "Prachi", "Trivedi", new Password(0, "PT@123"), new SchoolInfo(0, "L.J Engineering", "AHM-310103", "Private")));
 		users.add(new Users(0, "Ravi", "Pithadiya", new Password(0, "RP@123"), new SchoolInfo(0, "Sal Engineering collage", "AHM-3880120", "GOV")));
 		users.add(new Users(0, "Naresh", "", new Password(0, "NP@123"), new SchoolInfo(0, "", "Rajkot-210011", "")));
-		users.add(new Users(0, "test-01", "test-01", new Password(0, "test-01@123"), new SchoolInfo(0, "test-01", "test-01", "test-01")));
-		users.add(new Users(0, "test-02", "test-02", new Password(0, "test-02@123"), new SchoolInfo(0, "test-02", "test-02", "test-02")));
-		users.add(new Users(0, "test-03", "test-03", new Password(0, "test-03@123"), new SchoolInfo(0, "test-03", "test-03", "test-03")));
-		users.add(new Users(0, "test-04", "test-04", new Password(0, "test-04@123"), new SchoolInfo(0, "test-04", "test-04", "test-04")));
-		users.add(new Users(0, "test-05", "test-05", new Password(0, "test-05@123"), new SchoolInfo(0, "test-05", "test-05", "test-05")));
-		users.add(new Users(0, "test-06", "test-06", new Password(0, "test-06@123"), new SchoolInfo(0, "test-06", "test-06", "test-06")));
-		users.add(new Users(0, "test-07", "test-07", new Password(0, "test-07@123"), new SchoolInfo(0, "test-07", "test-07", "test-07")));
-		users.add(new Users(0, "test-08", "test-08", new Password(0, "test-08@123"), new SchoolInfo(0, "test-08", "test-08", "test-08")));
 		System.out.println("Data inserted sucessfully...");
 		userDao.saveAll(users);
 	}

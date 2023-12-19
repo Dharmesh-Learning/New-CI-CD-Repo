@@ -37,8 +37,8 @@ public class UserHandler {
 		userDao.delete(user);
 		return user;
 	}
-	
-	public Users getUserBySchoolName(String name) {
-		return userDao.getUserBySchoolName(name);	
+
+	public Users getUserByUserName(String userName) {
+		return userDao.loadDataByFirstNameOrLastName(userName);
 	}
 }
